@@ -1,0 +1,2074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Anwesenheitsliste</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Filtere kwer</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>50</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Liste der Mitspieler</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+				<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>extrahiere Namen</name>
+					<script>WL:get_names(matches[1])
+
+WL:update_wholist()</script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList>
+						<string>([\w\.]{18}\s)+</string>
+					</regexCodeList>
+					<regexCodePropertyList>
+						<integer>1</integer>
+					</regexCodePropertyList>
+				</Trigger>
+			</TriggerGroup>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Spieler betritt Morgengrauen</name>
+				<script>WL.online[matches[2]]=true
+
+WL:update_wholist()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(.*) ist gerade ins MorgenGrauen gekommen.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Spieler verlaesst Morgengrauen</name>
+				<script>WL.online[matches[2]]=nil
+
+WL:update_wholist()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(.*) hat gerade das MorgenGrauen verlassen.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Hydra erscheint</name>
+			<script>HZ:init()</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Die Hydra sinkt langsam in das Tal der Lupinen nieder.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>0</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Hydra geht/stirbt</name>
+			<script>HZ:close()</script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Die Hydra zerfaellt zu einem gigantischen Berg Gebein.</string>
+				<string>Die Hydra stirbt in einem Meer von Blut.</string>
+				<string>Die Hydra erhebt sich aus dem Tal der Lupinen.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+			</regexCodePropertyList>
+		</Trigger>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Krrrcks: Farb-Trigger</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Kommunikation</name>
+				<script>-- Keine Ahnung, ob das besser geht, aber ich will die ganze Zeile einfärben und nicht nur
+-- den "Match".
+
+selectCurrentLine()
+fg(farben.vg.komm)
+bg(farben.hg.komm)
+resetFormat()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#00aaff</mFgColor>
+				<mBgColor>#000000</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(.*) teilt Dir mit: (.*)$</string>
+					<string>^Du teilst (.*) mit: (.*)$</string>
+					<string>Du sagst:</string>
+					<string>sagt:</string>
+					<string>Du fragst:</string>
+					<string>fragt:</string>
+					<string>Wecker klingelt bei Dir.</string>
+					<string>denkt:</string>
+					<string>Matrix:</string>
+					<string>[Team </string>
+					<string>ACHTUNG:</string>
+					<string>aus der Ferne</string>
+					<string>in der Ferne</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Kampf: Zustand</name>
+				<script>local zustand = {}
+ 
+zustand["ist absolut fit."] = 1
+zustand["ist schon ein wenig schwaecher."] = 0.9 --Matrix
+zustand["ist schon etwas geschwaecht."] = 0.9 -- untersuche
+zustand["fuehlte sich heute auch schon besser."] = 0.8 -- Matrix
+zustand["fuehlte sich heute schon besser."] = 0.8 -- untersuche
+zustand["sieht ein wenig angekratzt aus."] = 0.7 -- Matrix
+zustand["ist leicht angeschlagen."] = 0.7 -- untersuche
+zustand["ist deutlich angekratzt."] = 0.6 -- Matrix
+zustand["sieht nicht mehr taufrisch aus."] = 0.6 -- untersuche
+zustand["sieht recht mitgenommen aus."] = 0.5 -- Matrix
+zustand["macht einen mitgenommenen Eindruck."] = 0.5 -- untersuche
+zustand["schwankt und wankt."] = 0.4 -- Matrix
+zustand["wankt bereits bedenklich."] = 0.4 -- untersuche
+zustand["war auch schon mal deutlich besser drauf."] = 0.3 -- Matrix
+zustand["ist in keiner guten Verfassung."] = 0.3 -- untersuche
+zustand["braucht dringend aerztliche Behandlung."] = 0.2 -- Matrix
+zustand["braucht dringend einen Arzt."] = 0.2 -- untersuche
+zustand["ist schon so gut wie bei Lars."]= 0.1 -- Matrix
+zustand["steht auf der Schwelle des Todes."]= 0.1 -- untersuche
+
+
+local ausgabe = zustand[matches[1]]
+
+if ausgabe then 
+  ausgabe = " (" .. ausgabe*100 .. "%)" 
+else
+  ausgabe = " (???%)"
+end
+
+selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+echo(ausgabe)
+resetFormat()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>ist absolut fit.</string>
+					<string>ist schon ein wenig schwaecher.</string>
+					<string>ist schon etwas geschwaecht.</string>
+					<string>fuehlte sich heute auch schon besser.</string>
+					<string>fuehlte sich heute schon besser.</string>
+					<string>sieht ein wenig angekratzt aus.</string>
+					<string>ist leicht angeschlagen.</string>
+					<string>ist deutlich angekratzt.</string>
+					<string>sieht nicht mehr taufrisch aus.</string>
+					<string>sieht recht mitgenommen aus.</string>
+					<string>macht einen mitgenommenen Eindruck.</string>
+					<string>wankt bereits bedenklich.</string>
+					<string>ist in keiner guten Verfassung.</string>
+					<string>braucht dringend einen Arzt.</string>
+					<string>steht auf der Schwelle des Todes.</string>
+					<string>ist schon so gut wie bei Lars.</string>
+					<string>braucht dringend aerztliche Behandlung.</string>
+					<string>war auch schon mal deutlich besser drauf.</string>
+					<string>schwankt und wankt.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Meldung des Todes</name>
+				<script>selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+resetFormat()
+
+expandAlias("info 8")
+send("lies plakette")</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>faellt tot zu Boden.</string>
+					<string>Die Titanwalze zerfaellt in ihre Bestandteile.Dein Heiligenschein flackert.</string>
+					<string>Das Tentakelmonster stirbt mit einem leisen Rascheln.</string>
+					<string>Das Kampfblech faellt laut scheppernd um.</string>
+					<string>Die Titanwalze zerfaellt in ihre Bestandteile.</string>
+					<string>Der Steingolem zerfaellt zu Geroell!</string>
+					<string>Der Schlabbermurks verspritzt noch etwas Schleim und stirbt.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Kampf: Flucht</name>
+				<script>selectCurrentLine()
+fg(farben.vg.info)
+bg(farben.hg.info)
+resetFormat()
+</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Die Angst ist staerker als Du ... Du willst nur noch weg hier.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Alarm: Post</name>
+				<script>selectCurrentLine()
+fg(farben.vg.alarm)
+bg(farben.hg.alarm)
+resetFormat()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Du hast (.*) neue Brief(.*) im Postamt liegen.$</string>
+					<string>Ein Postreiter ruft Dir aus einiger Entfernung zu, dass Du neue Post hast!</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Para-/Normalwelt</name>
+				<script>-- Prüfung über Portal 23
+
+selectCurrentLine()
+
+if (matches[3] == "gruenlich") then
+    fg(farben.vg.info)
+    bg(farben.hg.info)
+
+    ME.para = 0
+end
+
+if (matches[3] == "roetlich") then
+    fg(farben.vg.alarm)
+    bg(farben.hg.alarm)
+    ME.para = 1
+end
+
+zeigeRaum()
+resetFormat()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(.*)Du bist hier im Innern einer (.*) schimmernden Kugel,$</string>
+					<string>^(.*)Im Innern einer (.*) schimmernden Kugel.$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Bewegung: Ausgaenge</name>
+				<script>selectCaptureGroup(1)
+fg(farben.vg.info)
+bg(farben.hg.info)
+resetFormat()</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^Es gibt (.*) sichtbare Ausgaenge:</string>
+					<string>^Es gibt einen sichtbaren Ausgang: </string>
+					<string>^Es gibt keinen sichtbaren Ausgang.</string>
+					<string>^Es gibt keine sichtbaren Ausgaenge.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+		<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Hydra</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList>
+				<string>Die Hydra sinkt langsam in das Tal der Lupinen nieder.</string>
+			</regexCodeList>
+			<regexCodePropertyList>
+				<integer>0</integer>
+			</regexCodePropertyList>
+		</Trigger>
+	</TriggerPackage>
+	<TimerPackage />
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>Mundron: GUI</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>EK Anzeige anpassen</name>
+				<script>
+
+if ME.plakette&gt;0 then
+  EK.number = EK.number+EK.delta
+  EK.delta=0
+  
+  GUI.ekanzahl:echo("EK-Anzahl: " .. EK.number)
+end</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#EK$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Freunde hinzufuegen</name>
+				<script>for name in string.gmatch(matches[2], "%a+") do
+	WL.flist[name]=true
+end
+
+WL:save_list(WL.flist_file, WL.flist)
+
+WL:update_wholist()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#freund (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Freunde loeschen</name>
+				<script>for name in string.gmatch(matches[2], "%a+") do
+	WL.flist[name]=nil
+end
+
+WL:save_list(WL.flist_file, WL.flist)
+
+WL:update_wholist()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#lfreund (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Erwartende hinzufuegen</name>
+				<script>for name in string.gmatch(matches[2], "%a+") do
+	WL.elist[name]=true
+end
+
+WL:save_list(WL.elist_file, WL.elist)
+
+WL:update_wholist()
+
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#erwarte (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Erwartende loeschen</name>
+				<script>for name in string.gmatch(matches[2], "%a+") do
+	WL.elist[name]=nil
+end
+
+WL:save_list(WL.elist_file, WL.elist)
+
+WL:update_wholist()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#lerwarte (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Blockierten hinzufuegen</name>
+				<script>for name in string.gmatch(matches[2], "%a+") do
+	WL.blist[name]=true
+end
+
+WL:save_list(WL.blist_file, WL.blist)
+
+WL:update_wholist()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#blocke (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Blockierten loeschen</name>
+				<script>for name in string.gmatch(matches[2], "%a+") do
+	WL.blist[name]=nil
+end
+
+WL:save_list(WL.blist_file, WL.blist)
+
+WL:update_wholist()</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#lblocke (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Setze Attribute</name>
+				<script>ME.con=tonumber(matches[2])
+ME.int=tonumber(matches[3])
+ME.str=tonumber(matches[4])
+ME.dex=tonumber(matches[5])
+
+ME:save_setting()
+
+update_attributes()
+
+GUI:info("Die Attribute wurden wie folgt, gespeichert:\nAusdauer: "..ME.con.."\nIntelligenz: "..ME.int.."\nKraft: "..ME.str.."\nGeschick: "..ME.dex)</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#attr (\d+) (\d+) (\d+) (\d+)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Plakette aktivieren/deaktivieren</name>
+				<script>if matches[2]=="an" then
+	ME.plakette = 1
+	ME:save_setting()
+	EK.firsttrigger=true
+	send("lies plakette")
+else
+	ME.plakette = 0
+	ME:save_setting()
+	GUI.ekanzahl:echo("")
+end
+</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^#plakette (an|aus)$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+	<ActionPackage />
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>initGMCP</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--   Sagt gmcp, dass er alle Daten senden soll --
+-------------------------------------------------
+
+function initGMCP() 
+    sendGMCP( [[Core.Supports.Set [ "MG.char 1", "MG.room 1", "comm.channel 1" ] ]])
+end</script>
+			<eventHandlerList>
+				<string>gmcp.Char</string>
+			</eventHandlerList>
+		</Script>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>Mundron: GUI</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<Script isActive="yes" isFolder="no">
+				<name>Core</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+ME = {name="ABCDEFGHKLM", 
+			stufe=-1,
+			gildenlevel=-1,
+			gift=-1,
+			para=0, 
+			plakette=0,
+			vorsicht=-1,
+			lp_alt=-1,
+			lp=-1,
+			lp_max=-1,
+			kp=-1,
+			kp_max=-1,
+			str=99,
+			dex=99,
+			con=99,
+			int=99,
+			raum_kurz="No room",
+			raum_region="~",
+			raum_id="XXX"}
+
+GUI = {directory="/home/mundron/Morgengrauen/Einstellungen/",
+			file_gui="GUI_setting_",
+			file_me="ME_setting_",
+			angezeigt=false,
+			lp_anzeige_blinkt=false,
+			x=50,
+			y=-150,
+			width=510,
+			height=150}
+			
+
+EK = {firsttrigger = true,
+			number=0,
+			delta=0,}</script>
+				<eventHandlerList />
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>update_all</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function update_all()
+	GUI:info("Lade Base")
+	update_base()
+	GUI:info("Lade Vitals")
+	update_vitals()
+	GUI:info("Lade Gift")
+	update_poison()
+	GUI:info("Lade Vorsicht")
+	update_wimpy()
+	GUI:info("Lade Raum")
+	update_room()
+	GUI:info("Alles wurde ordnungsgemaess geladen")
+end</script>
+				<eventHandlerList />
+			</Script>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Basis-GUI</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>initGUI</name>
+					<packageName></packageName>
+					<script>function initGUI()
+
+	if not GUI.angezeigt then
+	
+		
+  	
+    -- Textfenster begrenzen
+    setBorderTop(0)
+    setBorderBottom(GUI.height+5) -- bisschen Platz fuer Statuszeile
+    setBorderLeft(0)
+    setBorderRight(0)
+  
+    -- Statuszeile malen. Layout wie folgt:
+    -- Zeile 1: 	spieler (Name, Stufe), gift, trenner_1, vorsicht (Vorsicht, Fluchtrichtung)
+    -- Zeile 2: 	ort_raum (Region, Raumnummer, Para), ort_region (Ort kurz)
+    -- Zeile 3: 	lp_titel, lp_anzeige (Lebenspunkte-Anzeige), kp_titel, kp_anzeige (KP-Anzeige), trenner_2
+    -- Zeile 4: 	Heiligenschein, Schutzhand, Elementarsphaere,
+    --				Elementarschild, Goettermacht, Weihe,
+    --				Abbild und Messerkreis
+		
+		
+	
+    GUI.statuszeile = Geyser.Container:new({name = "statuszeile", 
+																						x=GUI.x, 
+																						y=GUI.y, 
+																						width = GUI.width, 
+																						height=GUI.height})
+  	
+		-- label for the border
+		GUI.bgb = Geyser.Label:new({name="bgb",
+																x=0, 
+																y=0, 
+																width="100%",
+																height="100%"}, 
+																GUI.statuszeile)
+		GUI.bgb:setStyleSheet([[border-width: 5px;
+  						border-style: solid;
+  						border-color: rgb(100,50,0);
+  						border-radius: 5px;
+						]])
+		
+		-- label for the image background
+		GUI.bgi = Geyser.Label:new({name="bgi",
+																x=5, 
+																y=5,
+																width=GUI.width-10,
+																height=GUI.height-10}, 
+																GUI.statuszeile)
+		GUI.bgi:setTiledBackgroundImage([[/home/mundron/Morgengrauen/Einstellungen/bg.gif]])
+		
+		
+		-- Zeile 1
+    GUI.spieler = Geyser.Label:new({
+      name = "spieler",
+      x = 10, y = 10,
+      width = 150, height = 15}, GUI.statuszeile)
+  	GUI.spieler:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		GUI.spieler:setFontSize(9)
+		GUI.spieler:echo(ME.name .. " [" .. ME.stufe .. "&amp;nbsp;-&amp;nbsp;"..ME.gildenlevel.."]", "black")
+	
+    GUI.gift = Geyser.Label:new({
+      name = "gift",
+      x = 160, y = 10,
+      width = 50, height = 15}, GUI.statuszeile)
+		GUI.gift:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		GUI.gift:setFontSize(9)
+		
+    GUI.vorsicht = Geyser.Label:new({
+      name = "vorsicht",
+      x = 210, y = 10,
+      width = 300, height = 15}, GUI.statuszeile)
+		GUI.vorsicht:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		GUI.vorsicht:setFontSize(9)
+		GUI.vorsicht:echo("Vorsicht: undefined yet", "black")
+  
+    -- EK-Anzahl
+  	GUI.ekanzahl = Geyser.Label:new({
+      name = "ekanzahl",
+      x = 10, y = 25,
+      width = 150, height = 15}, GUI.statuszeile)
+		GUI.ekanzahl:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		GUI.ekanzahl:setFontSize(9)
+		if ME.plakette&gt;0 then
+			GUI.ekanzahl:echo("EK-Anzahl: "..EK.number, "black")
+			tempTimer(5, function() send("lies plakette") end)
+		end
+		
+		-- Ausdauer-Anzeige
+		GUI.ausdauer = Geyser.Label:new({
+      name = "ausdauer",
+      x =250, y = 25,
+      width = 60, height = 15}, GUI.statuszeile)
+		GUI.ausdauer:setStyleSheet([[background-color: rgba(0,0,0,0%);qproperty-alignment: 'AlignCenter']])
+		GUI.ausdauer:setFontSize(9)
+		GUI.ausdauer:echo("A: "..ME.con.."+99", "black")
+		
+		-- Intelligenz-Anzeige
+		GUI.intelligenz = Geyser.Label:new({
+      name = "intelligenz",
+      x = 310, y = 25,
+      width = 60, height = 15}, GUI.statuszeile)
+		GUI.intelligenz:setStyleSheet([[background-color: rgba(0,0,0,0%);qproperty-alignment: 'AlignCenter']])
+		GUI.intelligenz:setFontSize(9)
+		GUI.intelligenz:echo("I: "..ME.int.."+99", "black")
+		
+		-- Kraft-Anzeige
+		GUI.kraft = Geyser.Label:new({
+      name = "kraft",
+      x = 370, y = 25,
+      width = 60, height = 15}, GUI.statuszeile)
+		GUI.kraft:setStyleSheet([[background-color: rgba(0,0,0,0%);qproperty-alignment: 'AlignCenter']])
+		GUI.kraft:setFontSize(9)
+		GUI.kraft:echo("K: "..ME.str.."+99", "black")
+		
+		-- Geschick-Anzeige
+		GUI.geschick = Geyser.Label:new({
+      name = "geschick",
+      x = 430, y = 25,
+      width = 60, height = 15}, GUI.statuszeile)
+		GUI.geschick:setStyleSheet([[background-color: rgba(0,0,0,0%);qproperty-alignment: 'AlignCenter']])
+		GUI.geschick:setFontSize(9)
+		GUI.geschick:echo("G: "..ME.dex.."+99", "black")
+		
+  
+    -- LP / KP - Anzeige
+    GUI.lp_titel = Geyser.Label:new({
+      name = "lp_titel",
+      x = 20, y = 50,
+      width = 470, height = 20}, GUI.statuszeile)
+    GUI.lp_titel:echo("&lt;b&gt;&lt;center&gt; " .. ME.lp .. "/" .. ME.lp_max .. "&lt;/center&gt;&lt;/b&gt; ", "black")
+		GUI.lp_titel:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+  	
+		GUI.lp_anzeige_border = Geyser.Gauge:new({
+      name = "lp_anzeige_border",
+      x = 18, y = 43, 
+      width = 474, height = 9}, GUI.statuszeile)
+		GUI.lp_anzeige_border:setColor(50,50,50)
+    
+    GUI.lp_anzeige = Geyser.Gauge:new({
+      name = "lp_anzeige",
+      x = 19, y = 44, 
+      width = 472, height = 7}, GUI.statuszeile)
+    GUI.lp_anzeige:setColor(0, 180, 50) 
+  	
+    GUI.kp_titel = Geyser.Label:new({
+      name = "kp_titel",
+      x =20, y = 80,
+      width = 470, height = 20}, GUI.statuszeile)
+    GUI.kp_titel:echo("&lt;b&gt;&lt;center&gt; " .. ME.kp .. "/" .. ME.kp_max .. "&lt;/center&gt;&lt;/b&gt; ", "black")
+		GUI.kp_titel:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+  
+		GUI.kp_anzeige_border = Geyser.Gauge:new({
+      name = "kp_anzeige_border",
+      x = 18, y = 73,
+      width = 474, height = 9}, GUI.statuszeile)
+    GUI.kp_anzeige_border:setColor(50,50,50)
+  
+    GUI.kp_anzeige = Geyser.Gauge:new({
+      name = "kp_anzeige",
+      x =19, y = 74,
+      width = 472, height = 7}, GUI.statuszeile)
+    GUI.kp_anzeige:setColor(0, 50, 250)
+  	
+		
+  	-- Raum-Angaben
+    GUI.ort_raum = Geyser.Label:new({
+      name = "ort_raum",
+      x = 20, y = 100,
+      width = 250, height = 20}, GUI.statuszeile)
+		GUI.ort_raum:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		GUI.ort_raum:setFontSize(9)
+  	GUI.ort_raum:echo("&amp;nbsp;"..ME.raum_kurz, "black")
+  
+    GUI.ort_region = Geyser.Label:new({
+      name = "ort_region",
+      x = 270, y = 100,
+      width = 220, height = 20}, GUI.statuszeile)
+  	GUI.ort_region:setFontSize(9)
+		GUI.ort_region:echo(ME.raum_region .. " [" .. ME.raum_id .. "]", "black")
+		GUI.ort_region:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+  
+  	-- Timer
+    GUI.hydra = Geyser.Label:new({
+  	 name = "hydra",
+  	 x=20, y=120,
+  	 width = 220, height = 20}, GUI.statuszeile)
+		GUI.hydra:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		GUI.hydra:setFontSize(9)
+
+		GUI:info("GUI ist nun aufgebaut.")
+  	
+  	raiseEvent("GUI_loaded")
+  		
+  	GUI.angezeigt = true
+  end
+end</script>
+					<eventHandlerList>
+						<string>GUI_setting_loaded</string>
+					</eventHandlerList>
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Messages</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function GUI:warning(text)
+	echo("\n\n\n")
+	decho("&lt;255,255,0:0,0,0&gt;WARNUNG (GUI): ")
+	echo(text)
+	echo("\n\n\n")
+end
+
+function GUI:error(text)
+	echo("\n\n\n")
+	decho("&lt;255,155,0:0,0,0&gt;FEHLER (GUI): ")
+	echo(text)
+	echo("\n\n\n")
+end
+
+function GUI:info(text)
+	echo("\n\n\n")
+	decho("&lt;120,170,255:0,0,0&gt;INFO (GUI): ")
+	echo(text)
+	echo("\n\n\n")
+end</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>load_setting</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function load_setting()
+	GUI:load_setting()
+	ME:load_setting()
+	raiseEvent("GUI_setting_loaded")
+end
+
+function GUI:load_setting()
+	local lines=self:load_lines(GUI.file_gui)
+	if lines then
+  	self.x=tonumber(lines[2])
+  	self.y=tonumber(lines[4])
+  	self.width=tonumber(lines[6])
+  	self.height=tonumber(lines[8])
+	else
+		self:save_setting()
+		self:info("Datei mit Einstellungen fuer die GUI wurde erstellt!")
+	end
+end
+
+function ME:load_setting()
+	lines=GUI:load_lines(GUI.file_me)
+	if lines then
+  	self.para=tonumber(lines[2])
+  	self.con=tonumber(lines[4])
+  	self.int=tonumber(lines[6])
+  	self.str=tonumber(lines[8])
+  	self.dex=tonumber(lines[10])
+		self.plakette=tonumber(lines[12])
+	else
+		self:save_setting()
+		GUI:info("Datei mit Spieler-Werten wurde erstellt! Bitte die Attribute manuell einstellen.")
+	end
+end
+
+
+function GUI:save_setting()
+	local lines={}
+	lines[1]="Der x-Wert fuer die GUI:"
+	lines[2]=self.x
+	lines[3]="Der y-Wert fuer die GUI:"
+	lines[4]=self.y
+	lines[5]="Die Breite fuer die GUI:"
+	lines[6]=self.width
+	lines[7]="Die Hoehe fuer die GUI:"
+	lines[8]=self.height
+	self:save_lines(self.file_gui, lines)
+end
+
+function ME:save_setting()
+	local lines={}
+	lines[1]="Die Para-Welt:"
+	lines[2]=self.para
+	lines[3]="Die Ausdauer:"
+	lines[4]=self.con
+	lines[5]="Die Intelligenz:"
+	lines[6]=self.int
+	lines[7]="Die Staerke:"
+	lines[8]=self.str
+	lines[9]="Die Geschick:"
+	lines[10]=self.dex
+	lines[11]="Lies Plakette, wenn der Wert groesser als 0 ist:"
+	lines[12]=self.plakette
+	GUI:save_lines(GUI.file_me, lines)
+end
+
+function GUI:file_exists(file)
+  local f = io.open(self.directory..file..".txt", "rb")
+  if f then
+    f:close()
+  end
+  return f ~= nil
+end
+
+function GUI:load_lines(file)
+	file = file..getProfileName()
+  if not self:file_exists(file) then
+    return nil
+  end
+  lines = {}
+  for line in io.lines(self.directory..file..".txt") do
+    table.insert(lines, line)
+  end
+  return lines
+end
+
+function GUI:save_lines(file,lines)
+  
+	local f = io.open(self.directory..file..getProfileName()..".txt", "w+")
+
+	for k,v in pairs(lines) do
+   f:write(v,"\n")
+  end
+  f:close()
+end</script>
+					<eventHandlerList>
+						<string>sysLoadEvent</string>
+					</eventHandlerList>
+				</Script>
+				<ScriptGroup isActive="yes" isFolder="yes">
+					<name>Updates</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+					<eventHandlerList />
+					<Script isActive="yes" isFolder="no">
+						<name>update_base</name>
+						<packageName></packageName>
+						<script>--- Basisdaten erzeugen. Sowohl Name/Level von der GUI als auch Wege
+
+
+function update_base() 
+	if gmcp.MG.char.base then
+    ME.name = gmcp.MG.char.base.name 
+    ME.stufe = gmcp.MG.char.info.level
+  	ME.gildenlevel = gmcp.MG.char.info.guild_level
+  	 
+  	GUI.spieler:echo(ME.name .. " [" .. ME.stufe .. "&amp;nbsp;-&amp;nbsp;"..ME.gildenlevel.."]", "black")
+	end
+end
+</script>
+						<eventHandlerList>
+							<string>gmcp.MG.char.base</string>
+							<string>gmcp.MG.char.info</string>
+						</eventHandlerList>
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>update_vitals</name>
+						<packageName></packageName>
+						<script>
+
+function update_vitals()
+
+  -- GMCP Vitaldaten merken
+	
+	if gmcp.MG.char.vitals and gmcp.MG.char.maxvitals then
+  
+    ME.lp_max = gmcp.MG.char.maxvitals.max_hp
+    ME.kp_max = gmcp.MG.char.maxvitals.max_sp
+  	ME.lp = gmcp.MG.char.vitals.hp
+    ME.kp = gmcp.MG.char.vitals.sp
+    
+    -- Werte der Balken aktualisieren
+  	
+    if ME.lp_max+1 &gt; ME.lp then
+  		GUI.lp_anzeige:setValue(ME.lp, ME.lp_max, "")
+    	GUI.lp_titel:echo("&lt;b&gt;&lt;center&gt; " .. ME.lp .. "/" .. ME.lp_max .. "&lt;/center&gt;&lt;/b&gt; ", "black")
+  	end
+  	
+    if ME.kp_max+1 &gt; ME.kp then
+  		GUI.kp_anzeige:setValue(ME.kp, ME.kp_max, "")
+  		GUI.kp_titel:echo("&lt;b&gt;&lt;center&gt; " .. ME.kp .. "/" .. ME.kp_max .. "&lt;/center&gt;&lt;/b&gt; ", "black")
+  	end
+    
+    -- Treffer? Dann LP Balken blinken lassen
+  	
+  	diff = ME.lp - ME.lp_alt
+  
+  
+    if diff &lt; 0 then
+     	--display(diff)
+     	lp_anzeige_blinken(0.2)
+    else
+      if not GUI.lp_anzeige_blinkt then
+        lp_anzeige_faerben()
+      end
+    end
+  	
+    ME.lp_alt = ME.lp
+	end
+end
+
+
+function vital(lp)
+
+	ME.lp=lp
+  if ME.lp_max+1 &gt; ME.lp then
+		GUI.lp_anzeige:setValue(ME.lp, ME.lp_max, "")
+  	GUI.lp_titel:echo("&lt;b&gt;&lt;center&gt; " .. ME.lp .. "/" .. ME.lp_max .. "&lt;/center&gt;&lt;/b&gt; ", "black")
+	end
+	
+  if ME.kp_max+1 &gt; ME.kp then
+		GUI.kp_anzeige:setValue(ME.kp, ME.kp_max, "")
+		GUI.kp_titel:echo("&lt;b&gt;&lt;center&gt; " .. ME.kp .. "/" .. ME.kp_max .. "&lt;/center&gt;&lt;/b&gt; ", "black")
+	end
+  
+  -- Treffer? Dann LP Balken blinken lassen
+	
+	diff = ME.lp - ME.lp_alt
+
+
+  if diff &lt; 0 then
+   	--display(diff)
+   	lp_anzeige_blinken(0.2)
+  else
+    if not GUI.lp_anzeige_blinkt then
+      lp_anzeige_faerben()
+    end
+  end
+	
+  ME.lp_alt = ME.lp
+end
+
+function lp_anzeige_faerben()
+
+  -- Je nach LP Verlust wird Farbe gruen/gelb/rot
+  local lp_quote = ME.lp / ME.lp_max
+	GUI.lp_anzeige:setColor(ivalue(255,200,0,lp_quote), 
+                          ivalue(0,200,180,lp_quote), 
+													50)
+end
+
+function ivalue(a,b,c,t)
+	-- for t from 0 to 1/3 the value goes linearly from a to b
+	-- and for t from 1/3 to 1 the value goes linearly from b to c
+	if 3*t&lt;1 then
+		return a + 3 * (b - a) * t
+	else
+		return b + (c - b) * (3 * t - 2)
+	end
+end
+
+function lp_anzeige_blinken(dauer)
+
+  GUI.lp_anzeige_blinkt = true
+  GUI.lp_anzeige:setColor(255, 0, 50) -- rot
+  tempTimer(dauer, [[ lp_anzeige_entblinken() ]])
+
+end
+
+function lp_anzeige_entblinken()
+
+  GUI.lp_anzeige_blinkt = false
+  lp_anzeige_faerben()
+
+end</script>
+						<eventHandlerList>
+							<string>gmcp.MG.char.vitals</string>
+							<string>gmcp.MG.char.maxvitals</string>
+						</eventHandlerList>
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>update_poison</name>
+						<packageName></packageName>
+						<script>function update_poison()
+
+  ME.gift = gmcp.MG.char.vitals.poison
+  local zeile = ""
+
+  -- vergiftet?
+
+  if ME.gift == 0 then
+    r = 30
+    g = 30
+    b = 30
+  else  -- Farbuebergang gelb-&gt;orange-&gt;rot 
+    r = 255
+    g = 255 - ME.gift * 25
+    b = 0
+    zeile = "&lt;black&gt;G I F T"
+  end
+
+  -- Statuszeile aktualisieren
+
+  GUI.gift:echo(zeile)
+  GUI.gift:setColor(r, g, b)
+
+end</script>
+						<eventHandlerList>
+							<string>gmcp.MG.char.vitals</string>
+						</eventHandlerList>
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>update_wimpy</name>
+						<packageName></packageName>
+						<script>function update_wimpy()
+
+  ME.vorsicht = gmcp.MG.char.wimpy.wimpy
+  ME.fluchtrichtung = gmcp.MG.char.wimpy.wimpy_dir
+
+  if gmcp.MG.char.wimpy.wimpy &gt; 0 then
+		echo("\n\n\nVorsichtsaenderung verhindert.\n\n\n", "yellow")
+	end
+
+	local zeile=""
+  -- Prinz Eisenherz?
+
+	if ME.vorsicht&gt;0 then
+		zeile = "Vorsicht: "..ME.vorsicht
+	else
+		if FLUCHT.vorsicht&gt;0 then
+			zeile = "Vorsicht: " .. FLUCHT.vorsicht.."  FR: "..FLUCHT.reaktion[1]
+		else
+			zeile = "Prinz Eisenherz"
+		end
+	end
+
+	-- Statuszeile aktualisieren
+
+  GUI.vorsicht:echo(zeile, "black")
+	
+end
+
+function blabla()
+	local zeile=""
+  -- Prinz Eisenherz?
+
+	if ME.vorsicht&gt;0 then
+		zeile = "Vorsicht: " .. ME.vorsicht.."  FR: "..ME.fluchtrichtung
+	else
+		zeile = "Prinz Eisenherz"
+	end
+
+	-- Statuszeile aktualisieren
+
+  GUI.vorsicht:echo(zeile, "black")
+
+end
+
+</script>
+						<eventHandlerList>
+							<string>gmcp.MG.char.wimpy</string>
+						</eventHandlerList>
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>update_room</name>
+						<packageName></packageName>
+						<script>function update_room()
+
+	
+  ME.raum_kurz = gmcp.MG.room.info.short
+  ME.raum_region = gmcp.MG.room.info.domain
+  ME.raum_id = string.sub(gmcp.MG.room.info.id, 1, 5) 
+
+  -- Para?
+
+local color="black"
+
+  if ME.para &gt; 0 then
+    ME.raum_region = "Para-" .. ME.raum_region
+    color="white"
+  end
+
+  -- Statuszeile aktualisieren
+
+ 
+  GUI.ort_raum:echo("&amp;nbsp;"..ME.raum_kurz, color)
+	
+	if PF then
+		local id = gmcp.MG.room.info.id
+		if PF.ids[id] then
+			GUI.ort_region:echo(ME.raum_region .. " [" .. ME.raum_id .. "] WS: "..PF.ids[id], color)
+		else
+		  GUI.ort_region:echo(ME.raum_region .. " [" .. ME.raum_id .. "]", color)
+		end
+	else
+		GUI.ort_region:echo(ME.raum_region .. " [" .. ME.raum_id .. "]", color)
+	end
+end</script>
+						<eventHandlerList>
+							<string>gmcp.MG.room</string>
+						</eventHandlerList>
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>update_attributes</name>
+						<packageName></packageName>
+						<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function GUI:update_attr(label, name, value, delta)
+	if delta &gt; 0 then
+		label:echo(name..": "..value.."+"..delta, "black")
+		label:setStyleSheet([[background-color: rgba(0,255,0,50%);qproperty-alignment: 'AlignCenter']])
+	elseif delta == 0 then
+		label:echo(name..": "..value, "black")
+		label:setStyleSheet([[background-color: rgba(0,0,0,0%);qproperty-alignment: 'AlignCenter']])
+	else
+		if delta == -1 then
+			label:setStyleSheet([[background-color: rgba(250,250,0,70%);qproperty-alignment: 'AlignCenter']])
+			label:echo(name..": "..value..delta, "black")
+		elseif delta == -2 then	
+			label:setStyleSheet([[background-color: rgba(250,170,0,80%);qproperty-alignment: 'AlignCenter']])
+			label:echo(name..": "..value..delta, "black")
+		else
+			label:setStyleSheet([[background-color: rgba(255,50,0,100%);qproperty-alignment: 'AlignCenter']])
+			label:echo(name..": "..value..delta, "white")
+		end
+	end
+end
+
+function update_attributes()
+	GUI:update_attr(GUI.ausdauer, "A", ME.con, gmcp.MG.char.attributes.con-ME.con)
+  GUI:update_attr(GUI.intelligenz, "I", ME.int, gmcp.MG.char.attributes.int-ME.int)
+  GUI:update_attr(GUI.kraft, "K", ME.str, gmcp.MG.char.attributes.str-ME.str)
+  GUI:update_attr(GUI.geschick, "G", ME.dex, gmcp.MG.char.attributes.dex-ME.dex)
+end
+</script>
+						<eventHandlerList>
+							<string>gmcp.MG.char.attributes</string>
+						</eventHandlerList>
+					</Script>
+				</ScriptGroup>
+			</ScriptGroup>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Anwesenheitsliste</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Core (Anwesenheitsliste)</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+WL = {angezeigt=false,
+			hidden=false,
+			window_height=0,
+			online={},
+			flist_file="WL_flist",
+			flist={},
+			elist_file="WL_elist",
+			elist={},
+			blist_file="WL_blist",
+			blist={}}
+			
+		</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>init_wholist</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function init_wholist()
+	if not WL.angezeigt then
+		WL:load_lists()
+		
+  	local window_width,window_height = getMainWindowSize()
+  	WL.window_height = window_height
+		WL.wholist_container = Geyser.Container:new({name = "wholist_container", 
+  																								x=-150, 
+  																								y=0, 
+  																								width = 135, 
+  																								height=window_height+GUI.y})
+  																								
+  	-- label for the border
+  	WL.wlbgb = Geyser.Label:new({name="wlbgb",
+																x=0, 
+																y=0,
+																width=135,
+																height=window_height+GUI.y}, 
+																WL.wholist_container)
+  	WL.wlbgb:setStyleSheet([[border-width: 5px;
+    						border-style: solid;
+    						border-color: rgb(100,50,0);
+    						border-radius: 5px;
+  						]])
+  		
+  	-- label for the image background
+  	WL.wlbgi = Geyser.Label:new({name="wlbgi",
+																x=5, 
+																y=5, 
+																width=125,
+																height=window_height+GUI.y-10}, 
+																WL.wholist_container)
+																
+  	WL.wlbgi:setTiledBackgroundImage([[/home/mundron/Morgengrauen/Einstellungen/bg.gif]])
+  		
+  		
+   	WL.wholist = Geyser.Label:new({
+        name = "wholist",
+        x = 10, y = 10,
+        width = 105, height = window_height+GUI.y-10}, WL.wholist_container)
+  	
+  	WL.wholist:setStyleSheet([[background-color: rgba(0,0,0,0%);qproperty-alignment: 'AlignTop' ]])
+  	WL.wholist:setFontSize(11)
+		WL.wholist:echo("0 Spieler&lt;br&gt;&lt;br&gt;", "black") 
+		
+		tempTimer(2, function() send("kwer") end)
+  	
+  	if window_width &lt;760 then
+  		WL.wholist:hide()
+			WL.wlbgb:hide()
+			WL.wlbgi:hide()
+			WL.hidden = true
+		else
+			WL.hidden = false
+  	end
+		WL.angezeigt=true
+	end		
+end</script>
+					<eventHandlerList>
+						<string>gmcp.Char</string>
+					</eventHandlerList>
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>intern functions</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function WL:get_names(str)
+	local temp
+	for w in str:gmatch("%a+%p+") do
+		temp=w:gsub("%p+", "")
+		if temp:len()&gt;2 then
+			self.online[temp]=true
+		end
+  end
+end
+
+function WL:update_wholist()
+	local erg=""
+	local a={}
+	for k,_ in pairs(self.online) do 
+		table.insert(a,k) 
+	end
+	table.sort(a)
+	for _,n in ipairs(a) do
+		if n ~= "Logon" then
+			if self.flist[n] then
+				erg = erg.."&lt;font color='green'&gt;&lt;span style='background-color: #FFC000'&gt;&lt;b&gt;"..n.."&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;"
+			elseif WL.elist[n] then
+				erg = erg.."&lt;font color='blue'&gt;&lt;span style='background-color: #FFC000'&gt;&lt;b&gt;"..n.."&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;"
+			elseif WL.blist[n] then
+				erg = erg.."&lt;font color='red'&gt;&lt;span style='background-color: #FFC000'&gt;&lt;b&gt;"..n.."&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;"
+			else
+				erg = erg..n.."&lt;br&gt;"
+			end
+		end
+	end
+	erg = "&lt;b&gt;"..#a.."&lt;/b&gt; Spieler&lt;br&gt;&lt;br&gt;"..erg
+	if #a&lt;39 then
+		self.wholist:setFontSize(11)
+	elseif #a&lt;44 then
+		self.wholist:setFontSize(10)
+	elseif #a&lt;51 then
+		self.wholist:setFontSize(9)	
+	else
+		self.wholist:setFontSize(8)	
+	end
+	self.wholist:echo(erg)
+end</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>load and save</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function WL:load_lists()
+	WL.flist=WL:load_list(WL.flist_file)
+	WL.elist=WL:load_list(WL.elist_file)
+	WL.blist=WL:load_list(WL.blist_file)
+	GUI:info("Listen fuer Anwesenheitsliste geladen.")
+end
+
+function WL:load_list(file)
+	file = file..getProfileName()
+  local list = {}
+  if GUI:file_exists(file) then
+  	for line in io.lines(GUI.directory..file..".txt") do
+      list[line] = true
+    end
+	end
+  return list
+end
+
+function WL:save_list(file,list)
+	local f = io.open(GUI.directory..file..getProfileName()..".txt", "w+")
+	for k,_ in pairs(list) do
+   	f:write(k.."\n")
+  end
+  f:close()
+end</script>
+					<eventHandlerList />
+				</Script>
+			</ScriptGroup>
+			<Script isActive="yes" isFolder="no">
+				<name>color_communication</name>
+				<packageName></packageName>
+				<script>function color_communication()
+  fg(farben.vg.ebenen)
+  bg(farben.hg.ebenen)
+  echo(gmcp.comm.channel.msg)
+  resetFormat()
+end</script>
+				<eventHandlerList>
+					<string>gmcp.comm.channel</string>
+				</eventHandlerList>
+			</Script>
+			<Script isActive="yes" isFolder="no">
+				<name>Hydra Timer</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+HZ = {hydra=false,
+			hydratime = 0,
+			HYDRA_MAXTIME=2040,
+			HYDRA_NESTTIME=90}
+			
+			
+function HZ:init()
+	HZ.hydratime=HZ.HYDRA_MAXTIME+1
+	enableTimer("count_hydra")
+	self:decrease_time()
+end
+
+function HZ:close()
+	disableTimer("count_hydra")
+	GUI.hydra:echo("")
+end
+
+function HZ:decrease_time()
+	if HZ.hydratime&gt;0 then
+  	HZ.hydratime = HZ.hydratime-1
+  	local timestr = HZ:give_time()
+  	if HZ.hydratime &gt; HZ.HYDRA_MAXTIME-HZ.HYDRA_NESTTIME then
+  		GUI.hydra:echo("&lt;font color='black'&gt;Hydra (Nest): &lt;/font&gt;&lt;font color='white'&gt;&lt;b&gt;&lt;span style='background-color: #0000FF'&gt;"..timestr.."&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;")
+		else
+  		GUI.hydra:echo("&lt;font color='black'&gt;Hydra (Tal): &lt;/font&gt;&lt;font color='white'&gt;&lt;b&gt;&lt;span style='background-color: #FF0000'&gt;"..timestr.."&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;")
+  	end
+	else
+		
+	end
+end	
+
+function HZ:give_time()
+	local min = math.floor(HZ.hydratime/60)
+	local sec = HZ.hydratime%60
+	local res=""
+	if min&lt;10 then
+		res="0"..min..":"
+	else
+		res=min..":"
+	end
+	if sec&lt;10 then
+		res=res.."0"..sec
+	else
+		res=res..sec
+	end
+	return res
+end</script>
+				<eventHandlerList />
+			</Script>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Ausgangskreuz</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Core (Ausgangskreuz)</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+AK = {directory="/home/mundron/Morgengrauen/Einstellungen/Bilder/",
+			posdir ={
+							 norden=true,
+							 nordoben=true,
+							 nordunten=true,
+							 nordosten=true,
+							 nordostunten=true,
+							 nordostoben=true,
+							 osten=true,
+							 ostunten=true,
+							 ostoben=true,
+							 suedosten=true,
+							 suedostunten=true,
+							 suedostoben=true,
+							 sueden=true,
+							 suedunten=true,
+							 suedoben=true,
+							 suedwesten=true,
+							 suedwestunten=true,
+							 suedwestoben=true,
+							 westen=true,
+							 westoben=true,
+							 westunten=true,
+							 nordwesten=true,
+							 nordwestoben=true,
+							 nordwestunten=true,
+							 oben=true,
+							 unten=true,
+							 raus=true
+							},
+			directions={},
+			aufgebaut=false}</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>init_kreuz</name>
+					<packageName></packageName>
+					<script>function init_kreuz()
+	if not AK.aufgebaut then
+		AK.kreuz_container = Geyser.Container:new({name = "kreuz_container", 
+  																								x=GUI.y, 
+  																								y=GUI.y, 
+  																								width = -GUI.y, 
+  																								height=-GUI.y})
+
+  																								
+  	-- label for the border
+  	AK.akbgb = Geyser.Label:new({name="akbgb",
+																x=0, 
+																y=0,
+																width=-GUI.y,
+																height=-GUI.y}, 
+																AK.kreuz_container)
+																
+  	AK.akbgb:setStyleSheet([[border-width: 5px;
+    						border-style: solid;
+    						border-color: rgb(100,50,0);
+    						border-radius: 5px;
+  						]])
+  		
+  	-- label for the image background
+  	AK.akbgi = Geyser.Label:new({name="akbgi",
+																x=5, 
+																y=5, 
+																width=-GUI.y-10,
+																height=-GUI.y-10}, 
+																AK.kreuz_container)
+  	AK.akbgi:setTiledBackgroundImage([[/home/mundron/Morgengrauen/Einstellungen/bg.gif]])
+  		
+		local width = -GUI.y-20
+		local x=10
+		while (width%3 &gt;0) do
+			width = width-2
+			x=x+1
+		end
+		width = width/3
+			
+   	AK.nordwestunten = Geyser.Label:new({
+        name = "nordwestunten",
+        x = x, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordwestunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordwesten = Geyser.Label:new({
+        name = "nordwesten",
+        x = x, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordwesten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordwestoben = Geyser.Label:new({
+        name = "nordwestoben",
+        x = x, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordwestoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordunten = Geyser.Label:new({
+        name = "nordunten",
+        x = x+width, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.norden = Geyser.Label:new({
+        name = "norden",
+        x = x+width, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.norden:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordoben = Geyser.Label:new({
+        name = "nordoben",
+        x = x+width, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordostunten = Geyser.Label:new({
+        name = "nordostunten",
+        x = x+2*width, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordostunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordosten = Geyser.Label:new({
+        name = "nordosten",
+        x = x+2*width, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordosten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.nordostoben = Geyser.Label:new({
+        name = "nordostoben",
+        x = x+2*width, 
+				y = x,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.nordostoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.westunten = Geyser.Label:new({
+        name = "westunten",
+        x = x, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.westunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.westen = Geyser.Label:new({
+        name = "westen",
+        x = x, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.westen:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.westoben = Geyser.Label:new({
+        name = "westoben",
+        x = x, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.westoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.unten = Geyser.Label:new({
+        name = "unten",
+        x = x+width, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.unten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.raus = Geyser.Label:new({
+        name = "raus",
+        x = x+width, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.raus:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.oben = Geyser.Label:new({
+        name = "oben",
+        x = x+width, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.oben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.ostunten = Geyser.Label:new({
+        name = "ostunten",
+        x = x+2*width, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.ostunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.osten = Geyser.Label:new({
+        name = "osten",
+        x = x+2*width, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.osten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.ostoben = Geyser.Label:new({
+        name = "ostoben",
+        x = x+2*width, 
+				y = x+width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.ostoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedwestunten = Geyser.Label:new({
+        name = "suedwestunten",
+        x = x, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedwestunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedwesten = Geyser.Label:new({
+        name = "suedwesten",
+        x = x, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedwesten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedwestoben = Geyser.Label:new({
+        name = "suedwestoben",
+        x = x, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedwestoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedunten = Geyser.Label:new({
+        name = "suedunten",
+        x = x+width, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.sueden = Geyser.Label:new({
+        name = "sueden",
+        x = x+width, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.sueden:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedoben = Geyser.Label:new({
+        name = "suedoben",
+        x = x+width, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedostunten = Geyser.Label:new({
+        name = "suedostunten",
+        x = x+2*width, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedostunten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedosten = Geyser.Label:new({
+        name = "suedosten",
+        x = x+2*width, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedosten:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+		
+   	AK.suedostoben = Geyser.Label:new({
+        name = "suedostoben",
+        x = x+2*width, 
+				y = x+2*width,
+        width = width, height = width}, AK.kreuz_container)
+  	AK.suedostoben:setStyleSheet([[background-color: rgba(0,0,0,0%)]])
+	
+		echo("\n\n\nAusgangskreuz aufgebaut\n\n\n")
+		AK.aufgebaut=true
+	end
+end</script>
+					<eventHandlerList>
+						<string>GUI_setting_loaded</string>
+					</eventHandlerList>
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>update_kreuz</name>
+					<packageName></packageName>
+					<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function update_kreuz()
+	local newdir={}
+	-- Pruefe, welche Ausgaenge wegkommen und welche hinzukommen
+	for _,dir in ipairs(gmcp.MG.room.info.exits) do 
+		-- in AK.directions waren alle vorigen Ausgaenge.
+		-- falls eines der vorigen Ausgaenge wieder ein Ausgang
+		-- ist, dann brauchen wir nichts zu aendern. Deswegen
+		-- werden diese aus der Liste geloescht, so dass am Ende
+		-- AK.directions nur die Ausgaenge enthaelt, die es jetzt
+		-- nicht mehr gibt, also geloescht werden muessen.
+		-- Andererseits haben wir einen neuen Ausgang, den wir 
+		-- hinzufuegen muessen, was in der zusaetzlichen Liste 
+		-- newdir gespeichert wird.
+		if AK.directions[dir] then
+			
+			AK.directions[dir]=nil
+		else
+			if AK.posdir[dir] then -- nur zulaessige Richtungen speichern
+				newdir[dir]=true
+			end
+		end
+	end
+	
+	-- Alle Ausgaenge vom Vorraum, die es hier nicht mehr gibt,
+	-- muessen geloescht werden.
+	for dir,_ in pairs(AK.directions) do
+		AK[dir]:setBackgroundImage(AK.directory.."blank.png")
+	end
+	
+	-- Ausgaenge die neu hinzu kommen muessen angezeigt werden.
+	for dir,_ in pairs(newdir) do
+		AK[dir]:setBackgroundImage(AK.directory..dir..".png")
+	end
+	
+	-- schliesslich speichern wir nun in AK.directions alle Ausgaenge
+	-- diesen Raumes um es bei Raumaenderung wieder nuetzen zu koennen.
+	AK.directions={}
+	for _,dir in ipairs(gmcp.MG.room.info.exits) do 
+		if AK.posdir[dir] then -- nur zulaessige Richtungen speichern
+			AK.directions[dir]=true
+		end
+	end
+end</script>
+					<eventHandlerList>
+						<string>gmcp.MG.room.info</string>
+					</eventHandlerList>
+				</Script>
+			</ScriptGroup>
+			<Script isActive="yes" isFolder="no">
+				<name>GUI_window_resized</name>
+				<packageName></packageName>
+				<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+
+function GUI_window_resized()
+	if WL.angezeigt then
+		local window_width,window_height = getMainWindowSize()
+		if window_width &lt;760 and not WL.hidden then
+  		WL.wlbgb:hide()
+  		WL.wlbgi:hide()
+  		WL.wholist:hide()
+  		WL.hidden=true
+		elseif window_width&gt;760 and WL.hidden then
+			WL.wlbgb:show()
+  		WL.wlbgi:show()
+  		WL.wholist:show()
+  		WL.hidden=false
+		end
+		--local height = window_height+GUI.y
+		--if not(WL.window_height==height) then
+		--	WL.window_height = height
+		--end 
+	end
+end</script>
+				<eventHandlerList>
+					<string>sysWindowResizeEvent</string>
+				</eventHandlerList>
+			</Script>
+		</ScriptGroup>
+		<Script isActive="yes" isFolder="no">
+			<name>Farben</name>
+			<packageName></packageName>
+			<script>-- Einstellungen fuer Farben Allgemein
+farben = {}
+farben.vg = 
+  { komm = "cyan",
+    ebenen = "red",
+    info = "green",
+    alarm = "white",
+    script = "dark_green" }
+farben.hg = 
+  { komm = "black",
+    ebenen = "black",
+    info = "black", 
+    alarm = "red",
+    script = "black" }
+
+--- komm: Kommunikation wie teile-mit
+--- ebenen: Einfaerben der "normalen" Ebenen
+--- info: Einfaerben von Informationen des Muds (Status Gegner)
+--- alarm: Alarm-Nachrichten
+--- script: Nachrichten, die nicht vom Mud, sondern von einem Script stammen.
+
+--- Einstellungen fuer Farben Kampfscroll
+
+function msg (type, what)
+  -- setzt VG und HG je nach Typ der Kommunikation
+  local vg = farben.vg[type]
+  local hg = farben.hg[type]
+
+  if vg and hg then
+    cecho("&lt;"..vg..":"..hg.."&gt;"..what)
+  else
+    echo(what)
+  end
+end
+</script>
+			<eventHandlerList />
+		</Script>
+	</ScriptPackage>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
+</MudletPackage>
