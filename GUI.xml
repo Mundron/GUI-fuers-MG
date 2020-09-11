@@ -674,8 +674,7 @@ ME = {name="ABCDEFGHKLM",
 			raum_region="~",
 			raum_id="XXX"}
 
-GUI = {directory="/home/mundron/Morgengrauen/Einstellungen/",
-			file_gui="GUI_setting_",
+GUI = {file_gui="GUI_setting_",
 			file_me="ME_setting_",
 			angezeigt=false,
 			lp_anzeige_blinkt=false,
@@ -1034,7 +1033,7 @@ function ME:save_setting()
 end
 
 function GUI:file_exists(file)
-  local f = io.open(self.directory..file..".txt", "rb")
+  local f = io.open(getMudletHomeDir().."/"..file..".txt", "rb")
   if f then
     f:close()
   end
@@ -1047,7 +1046,7 @@ function GUI:load_lines(file)
     return nil
   end
   lines = {}
-  for line in io.lines(self.directory..file..".txt") do
+  for line in io.lines(getMudletHomeDir().."/"..file..".txt") do
     table.insert(lines, line)
   end
   return lines
@@ -1055,7 +1054,7 @@ end
 
 function GUI:save_lines(file,lines)
   
-	local f = io.open(self.directory..file..getProfileName()..".txt", "w+")
+	local f = io.open(getMudletHomeDir().."/"..file..getProfileName()..".txt", "w+")
 
 	for k,v in pairs(lines) do
    f:write(v,"\n")
@@ -1377,7 +1376,7 @@ end
 					</Script>
 				</ScriptGroup>
 			</ScriptGroup>
-			<ScriptGroup isActive="yes" isFolder="yes">
+			<ScriptGroup isActive="no" isFolder="yes">
 				<name>Anwesenheitsliste</name>
 				<packageName></packageName>
 				<script>-------------------------------------------------
@@ -1452,7 +1451,7 @@ function init_wholist()
 																height=window_height+GUI.y-10}, 
 																WL.wholist_container)
 																
-  	WL.wlbgi:setTiledBackgroundImage([[/home/mundron/Morgengrauen/Einstellungen/bg.gif]])
+  	WL.wlbgi:setTiledBackgroundImage(getMudletHomeDir()..[[/bg.gif]])
   		
   		
    	WL.wholist = Geyser.Label:new({
@@ -1554,7 +1553,7 @@ function WL:load_list(file)
 	file = file..getProfileName()
   local list = {}
   if GUI:file_exists(file) then
-  	for line in io.lines(GUI.directory..file..".txt") do
+  	for line in io.lines(getMudletHomeDir().."/"..file..".txt") do
       list[line] = true
     end
 	end
@@ -1562,7 +1561,7 @@ function WL:load_list(file)
 end
 
 function WL:save_list(file,list)
-	local f = io.open(GUI.directory..file..getProfileName()..".txt", "w+")
+	local f = io.open(getMudletHomeDir().."/"..file..getProfileName()..".txt", "w+")
 	for k,_ in pairs(list) do
    	f:write(k.."\n")
   end
